@@ -1,0 +1,63 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/admin?allowMultiQueries=true&autoReconnect=true
+    username: root
+    password:
+    driverClassName: com.mysql.jdbc.Driver
+    #pool
+    dbcp2:
+      # \u8FDE\u63A5\u521D\u59CB\u503C\uFF0C\u8FDE\u63A5\u6C60\u542F\u52A8\u65F6\u521B\u5EFA\u7684\u8FDE\u63A5\u6570\u91CF\u7684\u521D\u59CB\u503C  \u9ED8\u8BA4\u503C\u662F0 -->
+      initial-size: 20
+      # \u6700\u5C0F\u7A7A\u95F2\u503C.\u5F53\u7A7A\u95F2\u7684\u8FDE\u63A5\u6570\u5C11\u4E8E\u9600\u503C\u65F6\uFF0C\u8FDE\u63A5\u6C60\u5C31\u4F1A\u9884\u7533\u8BF7\u53BB\u4E00\u4E9B\u8FDE\u63A5\uFF0C\u4EE5\u514D\u6D2A\u5CF0\u6765\u65F6\u6765\u4E0D\u53CA\u7533\u8BF7  \u9ED8\u8BA4\u503C\u662F0 -->
+      min-idle: 20
+      # \u6700\u5927\u7A7A\u95F2\u503C.\u5F53\u7ECF\u8FC7\u4E00\u4E2A\u9AD8\u5CF0\u65F6\u95F4\u540E\uFF0C\u8FDE\u63A5\u6C60\u53EF\u4EE5\u6162\u6162\u5C06\u5DF2\u7ECF\u7528\u4E0D\u5230\u7684\u8FDE\u63A5\u6162\u6162\u91CA\u653E\u4E00\u90E8\u5206\uFF0C\u4E00\u76F4\u51CF\u5C11\u5230maxIdle\u4E3A\u6B62 \uFF0C0\u65F6\u65E0\u9650\u5236  \u9ED8\u8BA4\u503C\u662F8 -->
+      max-idle: 100
+      # \u8FDE\u63A5\u6C60\u7684\u6700\u5927\u503C\uFF0C\u540C\u4E00\u65F6\u95F4\u53EF\u4EE5\u4ECE\u6C60\u5206\u914D\u7684\u6700\u591A\u8FDE\u63A5\u6570\u91CF\uFF0C0\u65F6\u65E0\u9650\u5236   \u9ED8\u8BA4\u503C\u662F8 -->
+      max-total: 100
+      max-wait-millis: 10000
+      # \u9ED8\u8BA4 true
+      test-on-borrow: true
+      # \u9ED8\u8BA4 false
+      test-on-return: false
+      # \u9ED8\u8BA4 false
+      test-on-create: false
+      # \u9ED8\u8BA4 false
+      remove-abandoned-on-borrow: false
+      validation-query: select 1 from DUAL
+  #redis
+  redis:
+    host: localhost
+    password:
+    port: 6379
+    timeout: 10000
+    database: 0
+    pool:
+      max-active: 100
+      max-idle: 100
+      max-wait: 30000
+      min-idle: 20
+
+
+#mybatis
+mybatis:
+  type-handlers-package: org.demon.mybatis.handler
+  mapper:
+    basePackage: org.demon.mapper
+
+#\u81EA\u5B9A\u4E49 build
+build:
+  jwt:
+    key: jwt_x_L.498&C$1@0
+  #\u662F\u5426\u4F7F\u7528GsonResponseMessageConverter
+  addConverter: true
+  #\u8F6C\u6362Enum\u662F\u5426\u5141\u8BB8\u4E3ANull
+  shouldNullEnum: false
+  debug:
+    #\u662F\u5426\u662Fdebug\u6A21\u5F0F
+    enable: true
+  syncTask:
+    enable: true
+    timeout: 1800000
+    deleteKey: false
+
+

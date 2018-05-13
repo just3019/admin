@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+	       http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/task
+           http://www.springframework.org/schema/task/spring-task.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--<mvc:interceptors>
+        <mvc:interceptor>
+            &lt;!&ndash; 默认所有的请求都进行拦截 &ndash;&gt;
+            <mvc:mapping path="/**"/>
+            <bean class="org.demon.interceptor.AuthInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>-->
+
+    <context:annotation-config/>
+    <!-- 设置使用注解的类所在的jar包 -->
+    <context:component-scan base-package="org.demon.init"/>
+    <context:component-scan base-package="org.demon.config"/>
+    <context:component-scan base-package="org.demon.redis"/>
+    <context:component-scan base-package="org.demon.notice"/>
+    <context:component-scan base-package="org.demon.mapper"/>
+    <context:component-scan base-package="org.demon.service"/>
+    <context:component-scan base-package="org.demon.interceptor"/>
+    <context:component-scan base-package="org.demon.controller"/>
+    <context:component-scan base-package="org.demon.spring"/>
+    <!--  AOP Controller-->
+    <context:component-scan base-package="org.demon.aspect"/>
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+    <import resource="applicationContext.xml"/>
+
+    <!--定时任务-->
+    <task:annotation-driven executor="taskExecutor" scheduler="taskScheduler"/>
+    <task:executor id="taskExecutor" pool-size="5"/>
+    <task:scheduler id="taskScheduler" pool-size="10"/>
+</beans>
