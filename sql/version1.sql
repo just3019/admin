@@ -147,3 +147,21 @@ create table resource_info
 );
 
 alter table resource_info comment '资源详细';
+
+drop table if exists video_user;
+
+create table video_user
+(
+   id                   int not null auto_increment,
+   channel_no           varchar(50) default NULL comment '渠道编号',
+   type                 int default 1 comment '类型 1:普通 2:vip 3:高级vip',
+   cell_model           varchar(50) default NULL comment '手机型号',
+   cell_version         varchar(50) default NULL comment '系统版本',
+   package_id           int default 0 comment '包id',
+   create_time          timestamp default CURRENT_TIMESTAMP,
+   modify_time          timestamp default CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+   primary key (id)
+);
+
+alter table video_user comment '视频用户';
+
