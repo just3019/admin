@@ -40,7 +40,7 @@ public class VideoUserController {
     @Autowired
     private VideoUserMapper videoUserMapper;
 
-    @RequestMapping(value = "activeUser", method = RequestMethod.POST)
+    @RequestMapping(value = "videoUser/active", method = RequestMethod.POST)
     public Object active(@RequestBody VideoUserBean activeUserBean) {
         if (StringUtil.isEmpty(activeUserBean.channelNo)) {
             throw new CodeException(ResultCodes.Code.COMMON_ERROR_PARAMS, "channelNo");
@@ -51,7 +51,7 @@ public class VideoUserController {
         return videoUserService.active(activeUserBean);
     }
 
-    @RequestMapping(value = "activeUser/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "videoUser/{id}", method = RequestMethod.GET)
     public Object get(@PathVariable Integer id) {
         if (NumberUtil.isInValidId(id)) {
             throw new CodeException(ResultCodes.Code.COMMON_ERROR_PARAMS, "id");
