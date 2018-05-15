@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/admin?allowMultiQueries=true&autoReconnect=true
     username: root
-    password:
+    password: Wkk%#eREWUeqseAss*(4saw
     driverClassName: com.mysql.jdbc.Driver
     #pool
     dbcp2:
