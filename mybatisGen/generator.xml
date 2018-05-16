@@ -9,6 +9,10 @@
     <!-- <classPathEntry location="C:\oracle\product\10.2.0\db_1\jdbc\lib\ojdbc14.jar" />-->
     <context id="DB2Tables" targetRuntime="MyBatis3">
 
+        <property name="autoDelimitKeywords" value="false"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
         <plugin type="org.mybatis.generator.plugins.MySQLLimitPlugin"/>
 
 
@@ -49,6 +53,7 @@
                enableSelectByExample="true" selectByExampleQueryId="true">
             <!-- ibatis id 在返回值里   mybatis id 在对象中获取-->
             <generatedKey column="id" sqlStatement="JDBC"/>
+
         </table>
 
         <table tableName="banner" domainObjectName="Banner" enableUpdateByPrimaryKey="true"
@@ -58,6 +63,8 @@
                enableSelectByExample="true" selectByExampleQueryId="true">
             <!-- ibatis id 在返回值里   mybatis id 在对象中获取-->
             <generatedKey column="id" sqlStatement="JDBC"/>
+
+            <columnOverride column="desc" delimitedColumnName="true" />
         </table>
 
         <table tableName="catalog" domainObjectName="Catalog" enableUpdateByPrimaryKey="true"
@@ -112,6 +119,7 @@
                enableSelectByExample="true" selectByExampleQueryId="true">
             <!-- ibatis id 在返回值里   mybatis id 在对象中获取-->
             <generatedKey column="id" sqlStatement="JDBC"/>
+            <columnOverride column="desc" delimitedColumnName="true" />
         </table>
 
         <table tableName="resource_info" domainObjectName="ResourceInfo" enableUpdateByPrimaryKey="true"

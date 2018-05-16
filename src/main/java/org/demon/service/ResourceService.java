@@ -9,10 +9,14 @@ package org.demon.service;
 
 import org.demon.bean.PageData;
 import org.demon.bean.ResourceBean;
+import org.demon.bean.ResourceInfoBean;
 import org.demon.bean.ResourceQuery;
+import org.demon.mapper.ResourceInfoMapper;
 import org.demon.mapper.ResourceMapper;
 import org.demon.pojo.Resource;
 import org.demon.pojo.ResourceExample;
+import org.demon.pojo.ResourceInfo;
+import org.demon.pojo.ResourceInfoExample;
 import org.demon.util.NumberUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,6 +41,8 @@ import java.util.stream.Collectors;
 public class ResourceService {
     @Autowired
     private ResourceMapper resourceMapper;
+    @Autowired
+    private ResourceInfoMapper resourceInfoMapper;
 
 
     public PageData<ResourceBean> selectResources(ResourceQuery query) {
@@ -44,6 +50,9 @@ public class ResourceService {
         ResourceExample.Criteria criteria = example.createCriteria();
         if (NumberUtil.isValidId(query.catalogId)) {
             criteria.andCatalogIdEqualTo(query.catalogId);
+        }
+        if (NumberUtil.isValidId(query.type)) {
+            criteria.andTypeEqualTo(query.type);
         }
         PageData<ResourceBean> pageData = new PageData<>();
         pageData.count = resourceMapper.countByExample(example);
@@ -70,6 +79,26 @@ public class ResourceService {
         bean.statistic = resource.getStatistic();
         bean.createTime = resource.getCreateTime();
         bean.modifyTime = resource.getModifyTime();
+        return bean;
+    }
+
+    public ResourceBean selectInfos(Integer id) {
+        Resource resource = resourceMapper.selectByPrimaryKey(id);
+        ResourceBean bean = convertResourceBean(resource);
+        ResourceInfoExample resourceInfoExample = new ResourceInfoExample();
+        resourceInfoExample.createCriteria().andResourceIdEqualTo(id);
+        List<ResourceInfo> list = resourceInfoMapper.selectByExample(resourceInfoExample);
+        bean.infos = Optional.ofNullable(list).orElseGet(ArrayList::new).stream().map
+                (this::convertInfo).collect(Collectors.toList());
+        return bean;
+    }
+
+    private ResourceInfoBean convertInfo(ResourceInfo resourceInfo) {
+        ResourceInfoBean bean = new ResourceInfoBean();
+        bean.id = resourceInfo.getId();
+        bean.resourceId = resourceInfo.getResourceId();
+        bean.sort = resourceInfo.getSort();
+        bean.url = resourceInfo.getUrl();
         return bean;
     }
 }

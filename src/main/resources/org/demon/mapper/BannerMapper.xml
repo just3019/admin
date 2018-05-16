@@ -71,7 +71,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, package_id, pic_url, url, desc, sort, status, create_time, modify_time
+    id, package_id, pic_url, url, `desc`, sort, status, create_time, modify_time
   </sql>
   <select id="selectByExample" parameterType="org.demon.pojo.BannerExample" resultMap="BaseResultMap">
     select
@@ -114,7 +114,7 @@
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.demon.pojo.Banner" useGeneratedKeys="true">
     insert into banner (package_id, pic_url, url, 
-      desc, sort, status, 
+      `desc`, sort, status, 
       create_time, modify_time)
     values (#{packageId,jdbcType=INTEGER}, #{picUrl,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
       #{desc,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, 
@@ -133,7 +133,7 @@
         url,
       </if>
       <if test="desc != null">
-        desc,
+        `desc`,
       </if>
       <if test="sort != null">
         sort,
@@ -197,7 +197,7 @@
         url = #{record.url,jdbcType=VARCHAR},
       </if>
       <if test="record.desc != null">
-        desc = #{record.desc,jdbcType=VARCHAR},
+        `desc` = #{record.desc,jdbcType=VARCHAR},
       </if>
       <if test="record.sort != null">
         sort = #{record.sort,jdbcType=INTEGER},
@@ -222,7 +222,7 @@
       package_id = #{record.packageId,jdbcType=INTEGER},
       pic_url = #{record.picUrl,jdbcType=VARCHAR},
       url = #{record.url,jdbcType=VARCHAR},
-      desc = #{record.desc,jdbcType=VARCHAR},
+      `desc` = #{record.desc,jdbcType=VARCHAR},
       sort = #{record.sort,jdbcType=INTEGER},
       status = #{record.status,jdbcType=INTEGER},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
@@ -244,7 +244,7 @@
         url = #{url,jdbcType=VARCHAR},
       </if>
       <if test="desc != null">
-        desc = #{desc,jdbcType=VARCHAR},
+        `desc` = #{desc,jdbcType=VARCHAR},
       </if>
       <if test="sort != null">
         sort = #{sort,jdbcType=INTEGER},
@@ -266,7 +266,7 @@
     set package_id = #{packageId,jdbcType=INTEGER},
       pic_url = #{picUrl,jdbcType=VARCHAR},
       url = #{url,jdbcType=VARCHAR},
-      desc = #{desc,jdbcType=VARCHAR},
+      `desc` = #{desc,jdbcType=VARCHAR},
       sort = #{sort,jdbcType=INTEGER},
       status = #{status,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},

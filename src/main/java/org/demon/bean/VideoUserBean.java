@@ -22,15 +22,15 @@ public class VideoUserBean {
 
     public Integer id;
 
-    public String channelNo;
+    public String channelNo;//渠道 默认aaaaa
 
-    public Integer type;
+    public Integer type;//类型 1:普通 2:vip 3:高级vip
 
-    public String cellModel;
+    public String cellModel;//ios
 
-    public String cellVersion;
+    public String cellVersion;//系统版本
 
-    public Integer packageId;
+    public Integer packageId;//1
 
 
 }

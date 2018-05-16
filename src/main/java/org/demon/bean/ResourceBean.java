@@ -8,6 +8,7 @@
 package org.demon.bean;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * 类名称：ResourceBean
@@ -38,4 +39,6 @@ public class ResourceBean {
     public Date createTime;
 
     public Date modifyTime;
+
+    public List<ResourceInfoBean> infos;
 }

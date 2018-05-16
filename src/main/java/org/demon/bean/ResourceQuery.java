@@ -19,4 +19,5 @@ package org.demon.bean;
  */
 public class ResourceQuery extends PageReq {
     public Integer catalogId;
+    public Integer type;//1图片 2视频
 }
