@@ -72,12 +72,15 @@ public class VideoUserController {
         return videoUserService.createCode();
     }
 
+    /**
+     * 激活码激活会员
+     */
     @RequestMapping(value = "code/active", method = RequestMethod.POST)
-    public Object codeActive(@RequestBody VideoUserBean param){
-        if (StringUtil.isEmpty(param.code)){
+    public Object codeActive(@RequestBody VideoUserBean param) {
+        if (StringUtil.isEmpty(param.code)) {
             throw new CodeException(ResultCodes.Code.COMMON_ERROR_PARAMS, "code is null");
         }
-        if (NumberUtil.isInValidId(param.id)){
+        if (NumberUtil.isInValidId(param.id)) {
             throw new CodeException(ResultCodes.Code.COMMON_ERROR_PARAMS, "id is null");
         }
         if (StringUtil.isEmpty(param.channelNo)) {
