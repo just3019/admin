@@ -6,22 +6,22 @@ spring:
     driverClassName: com.mysql.jdbc.Driver
     #pool
     dbcp2:
-      # \u8FDE\u63A5\u521D\u59CB\u503C\uFF0C\u8FDE\u63A5\u6C60\u542F\u52A8\u65F6\u521B\u5EFA\u7684\u8FDE\u63A5\u6570\u91CF\u7684\u521D\u59CB\u503C  \u9ED8\u8BA4\u503C\u662F0 -->
+      # 连接初始值，连接池启动时创建的连接数量的初始值  默认值是0 -->
       initial-size: 20
-      # \u6700\u5C0F\u7A7A\u95F2\u503C.\u5F53\u7A7A\u95F2\u7684\u8FDE\u63A5\u6570\u5C11\u4E8E\u9600\u503C\u65F6\uFF0C\u8FDE\u63A5\u6C60\u5C31\u4F1A\u9884\u7533\u8BF7\u53BB\u4E00\u4E9B\u8FDE\u63A5\uFF0C\u4EE5\u514D\u6D2A\u5CF0\u6765\u65F6\u6765\u4E0D\u53CA\u7533\u8BF7  \u9ED8\u8BA4\u503C\u662F0 -->
+      # 最小空闲值.当空闲的连接数少于阀值时，连接池就会预申请去一些连接，以免洪峰来时来不及申请  默认值是0 -->
       min-idle: 20
-      # \u6700\u5927\u7A7A\u95F2\u503C.\u5F53\u7ECF\u8FC7\u4E00\u4E2A\u9AD8\u5CF0\u65F6\u95F4\u540E\uFF0C\u8FDE\u63A5\u6C60\u53EF\u4EE5\u6162\u6162\u5C06\u5DF2\u7ECF\u7528\u4E0D\u5230\u7684\u8FDE\u63A5\u6162\u6162\u91CA\u653E\u4E00\u90E8\u5206\uFF0C\u4E00\u76F4\u51CF\u5C11\u5230maxIdle\u4E3A\u6B62 \uFF0C0\u65F6\u65E0\u9650\u5236  \u9ED8\u8BA4\u503C\u662F8 -->
+      # 最大空闲值.当经过一个高峰时间后，连接池可以慢慢将已经用不到的连接慢慢释放一部分，一直减少到maxIdle为止 ，0时无限制  默认值是8 -->
       max-idle: 100
-      # \u8FDE\u63A5\u6C60\u7684\u6700\u5927\u503C\uFF0C\u540C\u4E00\u65F6\u95F4\u53EF\u4EE5\u4ECE\u6C60\u5206\u914D\u7684\u6700\u591A\u8FDE\u63A5\u6570\u91CF\uFF0C0\u65F6\u65E0\u9650\u5236   \u9ED8\u8BA4\u503C\u662F8 -->
+      # 连接池的最大值，同一时间可以从池分配的最多连接数量，0时无限制   默认值是8 -->
       max-total: 100
       max-wait-millis: 10000
-      # \u9ED8\u8BA4 true
+      # 默认 true
       test-on-borrow: true
-      # \u9ED8\u8BA4 false
+      # 默认 false
       test-on-return: false
-      # \u9ED8\u8BA4 false
+      # 默认 false
       test-on-create: false
-      # \u9ED8\u8BA4 false
+      # 默认 false
       remove-abandoned-on-borrow: false
       validation-query: select 1 from DUAL
   #redis
@@ -48,12 +48,12 @@ mybatis:
 build:
   jwt:
     key: jwt_x_L.498&C$1@0
-  #\u662F\u5426\u4F7F\u7528GsonResponseMessageConverter
+  #是否使用GsonResponseMessageConverter
   addConverter: true
-  #\u8F6C\u6362Enum\u662F\u5426\u5141\u8BB8\u4E3ANull
+  #转换Enum是否允许为Null
   shouldNullEnum: false
   debug:
-    #\u662F\u5426\u662Fdebug\u6A21\u5F0F
+    #是否是debug模式
     enable: true
   syncTask:
     enable: true
