@@ -32,5 +32,7 @@ public class VideoUserBean {
 
     public Integer packageId;//1
 
+    public String code;//激活码
+
 
 }

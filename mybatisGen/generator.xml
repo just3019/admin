@@ -46,98 +46,108 @@
         </javaClientGenerator>
 
         <!-- account -->
-        <table tableName="account" domainObjectName="Account" enableUpdateByPrimaryKey="true"
+        <!--<table tableName="account" domainObjectName="Account" enableUpdateByPrimaryKey="true"-->
+               <!--enableDeleteByPrimaryKey="true"-->
+               <!--enableInsert="true" enableSelectByPrimaryKey="true" selectByPrimaryKeyQueryId="true"-->
+               <!--enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"-->
+               <!--enableSelectByExample="true" selectByExampleQueryId="true">-->
+            <!--&lt;!&ndash; ibatis id 在返回值里   mybatis id 在对象中获取&ndash;&gt;-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+
+        <!--</table>-->
+
+        <!--<table tableName="banner" domainObjectName="Banner" enableUpdateByPrimaryKey="true"-->
+               <!--enableDeleteByPrimaryKey="true"-->
+               <!--enableInsert="true" enableSelectByPrimaryKey="true" selectByPrimaryKeyQueryId="true"-->
+               <!--enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"-->
+               <!--enableSelectByExample="true" selectByExampleQueryId="true">-->
+            <!--&lt;!&ndash; ibatis id 在返回值里   mybatis id 在对象中获取&ndash;&gt;-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+
+            <!--<columnOverride column="desc" delimitedColumnName="true" />-->
+        <!--</table>-->
+
+        <!--<table tableName="catalog" domainObjectName="Catalog" enableUpdateByPrimaryKey="true"-->
+               <!--enableDeleteByPrimaryKey="true"-->
+               <!--enableInsert="true" enableSelectByPrimaryKey="true" selectByPrimaryKeyQueryId="true"-->
+               <!--enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"-->
+               <!--enableSelectByExample="true" selectByExampleQueryId="true">-->
+            <!--&lt;!&ndash; ibatis id 在返回值里   mybatis id 在对象中获取&ndash;&gt;-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="channel" domainObjectName="Channel" enableUpdateByPrimaryKey="true"-->
+               <!--enableDeleteByPrimaryKey="true"-->
+               <!--enableInsert="true" enableSelectByPrimaryKey="true" selectByPrimaryKeyQueryId="true"-->
+               <!--enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"-->
+               <!--enableSelectByExample="true" selectByExampleQueryId="true">-->
+            <!--&lt;!&ndash; ibatis id 在返回值里   mybatis id 在对象中获取&ndash;&gt;-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="module" domainObjectName="Module" enableUpdateByPrimaryKey="true"-->
+               <!--enableDeleteByPrimaryKey="true"-->
+               <!--enableInsert="true" enableSelectByPrimaryKey="true" selectByPrimaryKeyQueryId="true"-->
+               <!--enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"-->
+               <!--enableSelectByExample="true" selectByExampleQueryId="true">-->
+            <!--&lt;!&ndash; ibatis id 在返回值里   mybatis id 在对象中获取&ndash;&gt;-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="package" domainObjectName="Package" enableUpdateByPrimaryKey="true"-->
+               <!--enableDeleteByPrimaryKey="true"-->
+               <!--enableInsert="true" enableSelectByPrimaryKey="true" selectByPrimaryKeyQueryId="true"-->
+               <!--enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"-->
+               <!--enableSelectByExample="true" selectByExampleQueryId="true">-->
+            <!--&lt;!&ndash; ibatis id 在返回值里   mybatis id 在对象中获取&ndash;&gt;-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="real_time_data" domainObjectName="RealTimeData" enableUpdateByPrimaryKey="true"-->
+               <!--enableDeleteByPrimaryKey="true"-->
+               <!--enableInsert="true" enableSelectByPrimaryKey="true" selectByPrimaryKeyQueryId="true"-->
+               <!--enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"-->
+               <!--enableSelectByExample="true" selectByExampleQueryId="true">-->
+            <!--&lt;!&ndash; ibatis id 在返回值里   mybatis id 在对象中获取&ndash;&gt;-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="resource" domainObjectName="Resource" enableUpdateByPrimaryKey="true"-->
+               <!--enableDeleteByPrimaryKey="true"-->
+               <!--enableInsert="true" enableSelectByPrimaryKey="true" selectByPrimaryKeyQueryId="true"-->
+               <!--enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"-->
+               <!--enableSelectByExample="true" selectByExampleQueryId="true">-->
+            <!--&lt;!&ndash; ibatis id 在返回值里   mybatis id 在对象中获取&ndash;&gt;-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+            <!--<columnOverride column="desc" delimitedColumnName="true" />-->
+        <!--</table>-->
+
+        <!--<table tableName="resource_info" domainObjectName="ResourceInfo" enableUpdateByPrimaryKey="true"-->
+               <!--enableDeleteByPrimaryKey="true"-->
+               <!--enableInsert="true" enableSelectByPrimaryKey="true" selectByPrimaryKeyQueryId="true"-->
+               <!--enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"-->
+               <!--enableSelectByExample="true" selectByExampleQueryId="true">-->
+            <!--&lt;!&ndash; ibatis id 在返回值里   mybatis id 在对象中获取&ndash;&gt;-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="video_user" domainObjectName="VideoUser" enableUpdateByPrimaryKey="true"-->
+               <!--enableDeleteByPrimaryKey="true"-->
+               <!--enableInsert="true" enableSelectByPrimaryKey="true" selectByPrimaryKeyQueryId="true"-->
+               <!--enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"-->
+               <!--enableSelectByExample="true" selectByExampleQueryId="true">-->
+            <!--&lt;!&ndash; ibatis id 在返回值里   mybatis id 在对象中获取&ndash;&gt;-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <table tableName="video_user_active" domainObjectName="VideoUserActive" enableUpdateByPrimaryKey="true"
                enableDeleteByPrimaryKey="true"
                enableInsert="true" enableSelectByPrimaryKey="true" selectByPrimaryKeyQueryId="true"
                enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"
                enableSelectByExample="true" selectByExampleQueryId="true">
-            <!-- ibatis id 在返回值里   mybatis id 在对象中获取-->
-            <generatedKey column="id" sqlStatement="JDBC"/>
+            <generatedKey column="id" sqlStatement="JDBC" />
 
-        </table>
 
-        <table tableName="banner" domainObjectName="Banner" enableUpdateByPrimaryKey="true"
-               enableDeleteByPrimaryKey="true"
-               enableInsert="true" enableSelectByPrimaryKey="true" selectByPrimaryKeyQueryId="true"
-               enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"
-               enableSelectByExample="true" selectByExampleQueryId="true">
-            <!-- ibatis id 在返回值里   mybatis id 在对象中获取-->
-            <generatedKey column="id" sqlStatement="JDBC"/>
-
-            <columnOverride column="desc" delimitedColumnName="true" />
-        </table>
-
-        <table tableName="catalog" domainObjectName="Catalog" enableUpdateByPrimaryKey="true"
-               enableDeleteByPrimaryKey="true"
-               enableInsert="true" enableSelectByPrimaryKey="true" selectByPrimaryKeyQueryId="true"
-               enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"
-               enableSelectByExample="true" selectByExampleQueryId="true">
-            <!-- ibatis id 在返回值里   mybatis id 在对象中获取-->
-            <generatedKey column="id" sqlStatement="JDBC"/>
-        </table>
-
-        <table tableName="channel" domainObjectName="Channel" enableUpdateByPrimaryKey="true"
-               enableDeleteByPrimaryKey="true"
-               enableInsert="true" enableSelectByPrimaryKey="true" selectByPrimaryKeyQueryId="true"
-               enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"
-               enableSelectByExample="true" selectByExampleQueryId="true">
-            <!-- ibatis id 在返回值里   mybatis id 在对象中获取-->
-            <generatedKey column="id" sqlStatement="JDBC"/>
-        </table>
-
-        <table tableName="module" domainObjectName="Module" enableUpdateByPrimaryKey="true"
-               enableDeleteByPrimaryKey="true"
-               enableInsert="true" enableSelectByPrimaryKey="true" selectByPrimaryKeyQueryId="true"
-               enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"
-               enableSelectByExample="true" selectByExampleQueryId="true">
-            <!-- ibatis id 在返回值里   mybatis id 在对象中获取-->
-            <generatedKey column="id" sqlStatement="JDBC"/>
-        </table>
-
-        <table tableName="package" domainObjectName="Package" enableUpdateByPrimaryKey="true"
-               enableDeleteByPrimaryKey="true"
-               enableInsert="true" enableSelectByPrimaryKey="true" selectByPrimaryKeyQueryId="true"
-               enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"
-               enableSelectByExample="true" selectByExampleQueryId="true">
-            <!-- ibatis id 在返回值里   mybatis id 在对象中获取-->
-            <generatedKey column="id" sqlStatement="JDBC"/>
-        </table>
-
-        <table tableName="real_time_data" domainObjectName="RealTimeData" enableUpdateByPrimaryKey="true"
-               enableDeleteByPrimaryKey="true"
-               enableInsert="true" enableSelectByPrimaryKey="true" selectByPrimaryKeyQueryId="true"
-               enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"
-               enableSelectByExample="true" selectByExampleQueryId="true">
-            <!-- ibatis id 在返回值里   mybatis id 在对象中获取-->
-            <generatedKey column="id" sqlStatement="JDBC"/>
-        </table>
-
-        <table tableName="resource" domainObjectName="Resource" enableUpdateByPrimaryKey="true"
-               enableDeleteByPrimaryKey="true"
-               enableInsert="true" enableSelectByPrimaryKey="true" selectByPrimaryKeyQueryId="true"
-               enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"
-               enableSelectByExample="true" selectByExampleQueryId="true">
-            <!-- ibatis id 在返回值里   mybatis id 在对象中获取-->
-            <generatedKey column="id" sqlStatement="JDBC"/>
-            <columnOverride column="desc" delimitedColumnName="true" />
-        </table>
-
-        <table tableName="resource_info" domainObjectName="ResourceInfo" enableUpdateByPrimaryKey="true"
-               enableDeleteByPrimaryKey="true"
-               enableInsert="true" enableSelectByPrimaryKey="true" selectByPrimaryKeyQueryId="true"
-               enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"
-               enableSelectByExample="true" selectByExampleQueryId="true">
-            <!-- ibatis id 在返回值里   mybatis id 在对象中获取-->
-            <generatedKey column="id" sqlStatement="JDBC"/>
-        </table>
-
-        <table tableName="video_user" domainObjectName="VideoUser" enableUpdateByPrimaryKey="true"
-               enableDeleteByPrimaryKey="true"
-               enableInsert="true" enableSelectByPrimaryKey="true" selectByPrimaryKeyQueryId="true"
-               enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"
-               enableSelectByExample="true" selectByExampleQueryId="true">
-            <!-- ibatis id 在返回值里   mybatis id 在对象中获取-->
-            <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
 
 

@@ -11,6 +11,7 @@ import org.demon.bean.VideoUserBean;
 import org.demon.code.ResultCodes;
 import org.demon.exception.CodeException;
 import org.demon.mapper.VideoUserMapper;
+import org.demon.pojo.VideoUserActive;
 import org.demon.service.VideoUserService;
 import org.demon.util.NumberUtil;
 import org.demon.util.StringUtil;
@@ -20,6 +21,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 类名称：ActiveUserController
@@ -57,6 +61,30 @@ public class VideoUserController {
             throw new CodeException(ResultCodes.Code.COMMON_ERROR_PARAMS, "id");
         }
         return videoUserMapper.selectByPrimaryKey(id);
+    }
+
+
+    /**
+     * 获取激活码
+     */
+    @RequestMapping(value = "code", method = RequestMethod.GET)
+    public Object getCode() {
+        return videoUserService.createCode();
+    }
+
+    @RequestMapping(value = "code/active", method = RequestMethod.POST)
+    public Object codeActive(@RequestBody VideoUserBean param){
+        if (StringUtil.isEmpty(param.code)){
+            throw new CodeException(ResultCodes.Code.COMMON_ERROR_PARAMS, "code is null");
+        }
+        if (NumberUtil.isInValidId(param.id)){
+            throw new CodeException(ResultCodes.Code.COMMON_ERROR_PARAMS, "id is null");
+        }
+        if (StringUtil.isEmpty(param.channelNo)) {
+            param.channelNo = "Q00001";
+        }
+        videoUserService.codeActive(param);
+        return null;
     }
 
 
