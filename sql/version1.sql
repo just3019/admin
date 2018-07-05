@@ -229,6 +229,8 @@ DROP TABLE IF EXISTS video_user_active;
 CREATE TABLE video_user_active
 (
   id            INT NOT NULL AUTO_INCREMENT,
+  channel_no   VARCHAR(50)  DEFAULT NULL
+  COMMENT '渠道编号',
   code          VARCHAR(20)  DEFAULT NULL
   COMMENT '激活码',
   video_user_id INT          DEFAULT 0
