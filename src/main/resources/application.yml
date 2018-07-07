@@ -60,4 +60,14 @@ build:
     timeout: 1800000
     deleteKey: false
 
+pay:
+  notify: http://39.108.60.205:8080/notify
+  zny:
+    uid: 308981785199
+    token: f682748b586a7d3ebb129e755c64e76e
+#    uid: 57752125
+#    token: d334cb030f2935c306ed47454a8c18dd
+    order: http://zny.39n6.cn/pay/action
+    select: http://zny.39n6.cn/pay/select
+
 

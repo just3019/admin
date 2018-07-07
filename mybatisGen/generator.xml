@@ -140,7 +140,18 @@
             <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
         <!--</table>-->
 
-        <table tableName="video_user_active" domainObjectName="VideoUserActive" enableUpdateByPrimaryKey="true"
+        <!--<table tableName="video_user_active" domainObjectName="VideoUserActive" enableUpdateByPrimaryKey="true"-->
+               <!--enableDeleteByPrimaryKey="true"-->
+               <!--enableInsert="true" enableSelectByPrimaryKey="true" selectByPrimaryKeyQueryId="true"-->
+               <!--enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"-->
+               <!--enableSelectByExample="true" selectByExampleQueryId="true">-->
+            <!--<generatedKey column="id" sqlStatement="JDBC" />-->
+
+
+        <!--</table>-->
+
+
+        <table tableName="order" domainObjectName="Order" enableUpdateByPrimaryKey="true"
                enableDeleteByPrimaryKey="true"
                enableInsert="true" enableSelectByPrimaryKey="true" selectByPrimaryKeyQueryId="true"
                enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"

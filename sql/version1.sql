@@ -245,3 +245,24 @@ CREATE TABLE video_user_active
 ALTER TABLE video_user_active
   COMMENT '激活码';
 
+
+drop table if exists `order`;
+
+/*==============================================================*/
+/* Table: "order"                                               */
+/*==============================================================*/
+create table `order`
+(
+  id                   int not null,
+  order_no             varchar(50) comment '订单编号',
+  pay_no               varchar(50) comment '支付单号',
+  price                float comment '支付金额',
+  real_price           float comment '实付金额',
+  create_time          timestamp,
+  modify_time          timestamp,
+  primary key (id)
+);
+
+alter table `order` comment '订单表';
+
+

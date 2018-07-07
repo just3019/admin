@@ -7,10 +7,15 @@
  */
 package org.demon.controller;
 
+import org.demon.bean.pay.ZnyBean;
+import org.demon.service.OrderService;
 import org.demon.util.JSONUtil;
 import org.demon.util.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Enumeration;
@@ -32,6 +37,31 @@ import java.util.Map;
 public class PayController {
 
     private Logger logger = Logger.newInstance(PayController.class);
+
+    @Autowired
+    private OrderService orderService;
+
+    @RequestMapping(value = "notify", method = RequestMethod.POST)
+    @ResponseBody
+    public String notify(HttpServletRequest request) {
+        Enumeration<?> pNames = request.getParameterNames();
+        Map<String, String> param = new HashMap<>();
+        while (pNames.hasMoreElements()) {
+            String pName = (String) pNames.nextElement();
+            param.put(pName, request.getParameter(pName));
+        }
+        String paramString = JSONUtil.obj2Json(param);
+        logger.info("返回参数：" + paramString);
+        ZnyBean bean = JSONUtil.json2Obj(paramString, ZnyBean.class);
+        orderService.saveZfb(bean);
+        return "success";
+    }
+
+
+
+
+
+
 
     @RequestMapping(value = "/zfbNotify")
     public String zfbNotify(HttpServletRequest request) {
