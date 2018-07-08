@@ -18,7 +18,7 @@ package org.demon.bean;
  * 修改时间：2018/5/14 下午9:53
  * 修改备注：
  */
-public class VideoUserBean {
+public class VideoUserBean extends BaseBean {
 
     public Integer id;
 
